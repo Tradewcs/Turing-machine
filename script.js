@@ -1,13 +1,18 @@
-let TuringMachine = document.querySelector('.turing-machine');
+let machineStrip = document.querySelector('.machine-strip');
+let machineHead = document.querySelector('.machine-head');
 
 for (let i = 0; i < 90; i++) {
 	let newCell = document.createElement('td');
 	newCell.id = `cell #${i}`;
 
-	newCell.innerHTML = '123';
+	newCell.innerHTML = i;
 
 
-	TuringMachine.appendChild(newCell);
+	machineStrip.appendChild(newCell);
+
+	newCell.id = 'head ' + newCell.id;
+	machineHead.appendChild(newCell);
 }
 
 
+// document.getElementById('cell #5').innerHTML = 'a'

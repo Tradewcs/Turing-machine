@@ -8,22 +8,30 @@
 <body>
 	
 	<div class="wrapper">
-		<div class="div-turing-machine">
+		<div class="container__machine-strip">
 
-			<table class="turing-machine"></table>
+			<table class="table_machine-strip">
+				<tr class="machine-strip"></tr>
+				<tr class="machine-head"></tr>
+			</table>
+
 		</div>
 
-		<div style="width:484px;overflow:hidden;">
+		<div class="container__control-panel">
+			<table class="control-panel">
+				<tr>
+					Зовнішній алфавіт
+				</tr>
 
-			<div style="height:200px;width:500px;overflow-y:scroll;" id="test">
-	 
-				 Тут ваш контент
-	 
-			</div>
-	 
-	 </div>
-	 
+				<tr>
+					Внутрішній алфавіт
+				</tr>
 
+				<tr>
+					Програма
+				</tr>
+			</table>
+		</div>
 	</div>
 
 	<script src="script.js"></script>

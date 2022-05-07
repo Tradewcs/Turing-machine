@@ -1,24 +1,33 @@
 body {
 	margin: 0;
+	font-family: 'Fira code';
 	font-size: 26px;
+
+}
+
+table {
+	margin: 20px;
+	table-layout: fixed;
+	width: 0px;
+}
+
+td {
+	width: 45px;
+	border: 0.5px solid black;
+	text-align: center;
 }
 
 .wrapper {
 	margin: 40px;
 }
 
-.div-turing-machine {
+.container__machine-strip {
 	width: 80%;
 	overflow-x: scroll;
 	height: 100px;
 }
 
-table {
-	margin: 20px;
-}
-
-table td {
-	border: 0.5px solid black;
-	width: 50px;
+.td-invisible {
+	border: 0.5px solid transparent;
 }
 
