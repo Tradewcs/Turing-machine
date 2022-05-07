@@ -13,6 +13,7 @@ table {
 
 td {
 	width: 45px;
+	height: 30px;
 	border: 0.5px solid black;
 	text-align: center;
 }
@@ -23,11 +24,16 @@ td {
 
 .container__machine-strip {
 	width: 80%;
+	height: 130px;
 	overflow-x: scroll;
-	height: 100px;
+	overflow-y: hidden;
 }
 
-.td-invisible {
+.td-invs {
 	border: 0.5px solid transparent;
 }
 
+.control-panel {
+	border-collapse: collapse;
+	border: 0.5px solid black;
+}
