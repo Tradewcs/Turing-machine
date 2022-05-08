@@ -1,17 +1,24 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin: 0;
 }
 
 body {
 	margin: 0;
 	font-family: 'Fira code';
-	font-size: 36px;
-	
+	font-size: 30px;
+
 }
 
-table td, th {
+table td,
+th {
 	border: 0.5px solid black;
 }
+
 .wrapper {
 	margin: 40px;
 }
@@ -58,10 +65,34 @@ table td, th {
 }
 
 .alphabet-symbols-choise {
+	font-size: 20px;
+}
+
+.alphabet-symbols-choise {
 	margin: 10px;
 	border-collapse: collapse;
 }
 
+
+
 .alphabet-symbols-choise th {
-	padding: 10px;
+	width: 80px;
+	padding: 7px;
+	font-size: 20px;
 }
+
+
+.alphabet-symbols-choise .numbers-choise td {
+	padding: 5px;
+	width: 90px;
+	display: flex;
+	height: 30px;
+}
+
+.alphabet-symbols-choise .letters-choise td {
+	padding: 5px;
+	width: 90px;
+	display: flex;
+	height: 30px;
+}
+
