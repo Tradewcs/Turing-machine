@@ -14,14 +14,15 @@ body {
 
 }
 
-table td,
-th {
+table td, th {
 	border: 0.5px solid black;
 }
 
 .wrapper {
 	margin: 40px;
 }
+
+
 
 .table_machine-strip {
 	margin: 20px;
@@ -47,6 +48,7 @@ th {
 }
 
 
+
 .container__control-panel {
 	margin: 60px;
 }
@@ -59,40 +61,22 @@ th {
 	padding: 20px;
 }
 
-
 .control-panel h5 {
 	background-color: #00fffb;
 }
 
-.alphabet-symbols-choise {
-	font-size: 20px;
-}
+
 
 .alphabet-symbols-choise {
+	font-size: 20px;
 	margin: 10px;
 	border-collapse: collapse;
 }
 
-
-
 .alphabet-symbols-choise th {
-	width: 80px;
-	padding: 7px;
-	font-size: 20px;
+	padding: 10px;
 }
 
-
-.alphabet-symbols-choise .numbers-choise td {
-	padding: 5px;
-	width: 90px;
-	display: flex;
-	height: 30px;
+.alphabet-symbols-choise td {
+	padding: 10px;
 }
-
-.alphabet-symbols-choise .letters-choise td {
-	padding: 5px;
-	width: 90px;
-	display: flex;
-	height: 30px;
-}
-

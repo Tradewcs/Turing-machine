@@ -6,3 +6,12 @@ for (let i = 0; i < 90; i++) {
 	machineHead.innerHTML  += `<td class="td-invs" id="h#${i}"></td>`;
 }
 
+let alphabeth = [];
+
+for (let i = 0; i < 10; i++) {
+	if (document.getElementById(`symbol#${i}`).checked) {
+		alphabeth.push(i);
+	}
+}
+
+console.log(alphabeth);
