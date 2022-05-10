@@ -30,17 +30,21 @@ table td, th {
 	width: 0px;
 }
 
-.table_machine-strip td {
-	width: 45px;
-	height: 30px;
-	text-align: center;
-}
-
 .container__machine-strip {
 	width: 80%;
 	height: 130px;
 	overflow-x: scroll;
 	overflow-y: hidden;
+}
+
+.table_machine-strip td {
+	width: 60px;
+	height: 40px;
+	text-align: center;
+}
+
+.yellow {
+	background-color: #ffff00;
 }
 
 .table_machine-strip .td-invs {

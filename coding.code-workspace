@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"iosfwd": "cpp",
+			"istream": "cpp",
+			"iterator": "cpp",
+			"ostream": "cpp",
+			"string": "cpp",
+			"typeinfo": "cpp",
+			"array": "cpp",
+			"initializer_list": "cpp",
+			"utility": "cpp"
+		}
+	}
+}
