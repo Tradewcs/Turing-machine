@@ -1,17 +1,49 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-}
+*{padding: 0; margin: 0; border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height: 100%;width: 100%;font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;}
+input,button,textarea{font-family: inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
+
+
 
 body {
 	margin: 0;
 	font-family: 'Fira code';
-	font-size: 30px;
+	font-size: 30px
 
+}
+
+
+ul li {
+	text-align: left;
+}
+
+
+
+.title {
+	
+	margin: 0px;
+	line-height: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #00fffb;
+}
+
+h5 {
+	margin: 30px;
+}
+
+input {
+	margin: 5px;
 }
 
 table td, th {
@@ -62,13 +94,10 @@ table td, th {
 }
 
 .control-panel td {
-	padding: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	
 }
-
-.control-panel h5 {
-	background-color: #00fffb;
-}
-
 
 
 .alphabet-symbols-choise {
@@ -83,4 +112,17 @@ table td, th {
 
 .alphabet-symbols-choise td {
 	padding: 10px;
+}
+
+.control-panel td {
+	vertical-align: top;
+}
+
+.ExternalAlphabet ul{
+	font-size: 25px;
+	margin: 30px;
+}
+
+button {
+	font-size: 25px;
 }

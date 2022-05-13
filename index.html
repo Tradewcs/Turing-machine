@@ -22,7 +22,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<h5>Зовнішній алфавіт</h5>
+							<div class="title"> <h5>Зовнішній <br> алфавіт</h5> </div>
 
 							<table class="alphabet-symbols-choise">
 								<tr>
@@ -98,16 +98,18 @@
 						</td>
 						
 						<td class="ExternalAlphabet">
-							<h5>Внутрішній алфавіт</h5>
+							<div class="title"> <h5>Внутрішній <br> алфавіт</h5> </div>
 
 							<ul>
-								<li>q0</li>
-								<li>q1</li>
+								<li>\[q_0\]</li>
+								<li>\[q_1\]</li>
 							</ul>
+
+							<button class="stateAdd">Додати стан</button>
 						</td>
 						
 						<td>
-							<h5>Програма</h5>
+							<div class="title"> <h5>Програма</h5> </div>
 						</td>
 					</tr>
 				</tbody>
@@ -117,6 +119,14 @@
 
 
 
+	<script id="LaTeXscript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config"> 
+		MathJax.Hub.Config({ 
+				"HTML-CSS": { scale: 200, linebreaks: { automatic: true } }, 
+				SVG: { linebreaks: { automatic:true } }, 
+				displayAlign: "left" }); 
+	</script>
+	
 	
 	<script src="script.js"></script>
 </body>

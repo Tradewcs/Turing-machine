@@ -50,6 +50,8 @@ alphabeth_table.onclick = function(event) {
 		}
 	}
 
+	console.log(nullSymbolChoice.value);
+	nullSymbol = nullSymbolChoice.value;
 	loadNullSymbolChoice(alphabeth_arr);
 }
 
