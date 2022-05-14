@@ -7,6 +7,13 @@ let nullSymbol = '0';
 let MachineHead_currentPosition = 0;
 let HeadCurrentPosition = 0;
 
+let addState = document.querySelector('.addState');
+
+addState.onclick = () => {
+	MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'machine-head']);
+	
+}
+
 
 window.onload = () => {
 	fillStrip(nullSymbol, 100);
@@ -15,6 +22,10 @@ window.onload = () => {
 	console.log(test1);
 
 	setMachineHead(3);
+
+
+	MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'machine-strip']);
+	
 }
 
 
@@ -70,7 +81,7 @@ function setMachineHead(position) {
 	cell = document.getElementById(`cell#${HeadCurrentPosition}`);
 	cell.classList.add('yellow');
 	cellHead = document.getElementById(`h#${HeadCurrentPosition}`);
-	cellHead.innerHTML = '↑';
+	cellHead.innerHTML = '\\uparrow';
 
 
 }

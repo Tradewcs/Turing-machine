@@ -29,21 +29,40 @@ ul li {
 
 
 
-.title {
-	
-	margin: 0px;
-	line-height: 40px;
-	padding-left: 40px;
-	padding-right: 40px;
-	background-color: #00fffb;
-}
-
 h5 {
 	margin: 30px;
 }
 
 input {
 	margin: 5px;
+	width: 18px;
+	height: 18px;
+}
+
+select {
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+}
+
+button {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: rgb(199, 199, 199);
+}
+
+button:hover {
+	background-color: rgb(182, 182, 182);
+}
+
+button:active {
+	background-color: rgb(153, 152, 152);
 }
 
 table td, th {
@@ -54,6 +73,14 @@ table td, th {
 	margin: 40px;
 }
 
+.title {
+	
+	margin: 0px;
+	line-height: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #00fffb;
+}
 
 
 .table_machine-strip {
@@ -94,9 +121,9 @@ table td, th {
 }
 
 .control-panel td {
+	padding-top: 1px;
 	padding-left: 20px;
 	padding-right: 20px;
-	
 }
 
 
@@ -123,6 +150,6 @@ table td, th {
 	margin: 30px;
 }
 
-button {
-	font-size: 25px;
+.select_nullSumbol {
+	padding-left: 30px;
 }
