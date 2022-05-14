@@ -12,8 +12,8 @@
 			<table class="table_machine-strip">
 				<tr class="machine-strip"></tr>
 				<tr class="machine-head"></tr>
+				<tr class="machine-state"></tr>
 
-				<div id="test1"></div>
 			</table>
 		</div>
 
@@ -102,9 +102,11 @@
 						<td class="ExternalAlphabet">
 							<div class="title"> <h5>Внутрішній <br> алфавіт</h5> </div>
 
-							<ul>
-								<li>\[q_0\]</li>
-								<li>\[q_1\]</li>
+							<ul class="statesList">
+								<!-- <li>\[q_0\]</li>
+								<li>\[q_1\]</li> -->
+								<li>q0</li>
+								<li>q1</li>
 							</ul>
 
 							<button class="addState">Додати стан</button>
@@ -113,6 +115,25 @@
 						
 						<td>
 							<div class="title"> <h5>Програма</h5> </div>
+
+							<table class="machineProgram">
+								<thead>
+									<td></td>
+									<td>0</td>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>q0</td>
+										<td></td>
+									</tr>
+									<td>q1</td>
+									<td></td>
+								</tbody>
+							</table>
+
+							<button class="inactive"> Експорт </button>
+							<button class="inactive"> Імпорт </button>
 						</td>
 					</tr>
 				</tbody>
@@ -120,17 +141,17 @@
 		</div>
 
 
-
-
-	<script id="LaTeXscript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+		
+		
+	<!-- <script id="LaTeXscript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 	<script type="text/x-mathjax-config"> 
 		MathJax.Hub.Config({ 
-				"HTML-CSS": { scale: 200, linebreaks: { automatic: true } }, 
-				SVG: { linebreaks: { automatic:true } }, 
-				displayAlign: "left" }); 
-	</script>
+			"HTML-CSS": { scale: 200, linebreaks: { automatic: true } }, 
+			SVG: { linebreaks: { automatic:true } }, 
+			displayAlign: "left" }); 
+		</script> -->
+		
+		<script src="script.js"></script>
 	
-	
-	<script src="script.js"></script>
 </body>
 </html>

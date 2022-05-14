@@ -3,33 +3,57 @@ let alphabeth_table = document.querySelector('.alphabet-symbols-choise');
 let machineStrip = document.querySelector('.machine-strip');
 let machineHead = document.querySelector('.machine-head');
 let nullSymbolChoice = document.getElementById('nullSymbolChoice');
-let nullSymbol = '0';
-let MachineHead_currentPosition = 0;
-let HeadCurrentPosition = 0;
-
 let addState = document.querySelector('.addState');
+let deleteState = document.querySelector('.deleteState');
+let programTable = document.querySelector('.machineProgram');
+
+
+
+let nullSymbol = '0';
+let HeadCurrentPosition = 0;
+let statesCount = 2;
+
 
 addState.onclick = () => {
-	MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'machine-head']);
-	
+	let statesList = document.querySelector('.statesList');
+	statesList.innerHTML += `<li>q${statesCount++}</li>`;
 }
+
+deleteState.onclick = () => {
+	if (statesCount) {
+		let statesList = document.querySelector('.statesList');
+		statesList.innerHTML = '';
+
+		statesCount--;
+		for (let i = 0; i < statesCount; i++) {
+			statesList.innerHTML += `<li>q${i}</li>`
+		}
+	}
+}
+
+// addState.addEventListener('click', function() {
+// 	ExternalAlphabet.innerHTML += 4;
+
+// 	// MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'machine-strip']);
+	
+// 	console.log('123');
+// });
 
 
 window.onload = () => {
-	fillStrip(nullSymbol, 100);
+	fillStrip(100);
 
-	let test1 = document.getElementById('test1');
-	console.log(test1);
+	
 
 	setMachineHead(3);
 
 
-	MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'machine-strip']);
+	// MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'machine-strip']);
 	
 }
 
 
-function fillStrip(nullSymbol, length) {
+function fillStrip(length) {
 	machineStrip.innerHTML = '';
 	machineHead.innerHTML = '';
 
@@ -68,7 +92,7 @@ alphabeth_table.onclick = function(event) {
 
 nullSymbolChoice.onchange = function(event) {
 	nullSymbol = event.target.value;
-	fillStrip(nullSymbol, 100);
+	fillStrip(100);
 }
 
 function setMachineHead(position) {
@@ -81,8 +105,16 @@ function setMachineHead(position) {
 	cell = document.getElementById(`cell#${HeadCurrentPosition}`);
 	cell.classList.add('yellow');
 	cellHead = document.getElementById(`h#${HeadCurrentPosition}`);
-	cellHead.innerHTML = '\\uparrow';
+	cellHead.innerHTML = '↑';
 
 
 }
 
+
+function BuildProgramTable() {
+	programTable.innerHTML = '<';
+
+	for (let i = 0; i < statesCount; i++) {
+		
+	}
+}

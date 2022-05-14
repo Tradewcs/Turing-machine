@@ -65,6 +65,21 @@ button:active {
 	background-color: rgb(153, 152, 152);
 }
 
+
+.inactive {
+	background-color: rgb(219, 219, 219);
+	color: rgb(202, 202, 202);
+}
+
+.inactive:hover {
+	background-color: rgb(219, 219, 219);
+	cursor: not-allowed;
+}
+
+.inactive:active {
+	background-color: rgb(219, 219, 219);
+}
+
 table td, th {
 	border: 0.5px solid black;
 }
@@ -152,4 +167,8 @@ table td, th {
 
 .select_nullSumbol {
 	padding-left: 30px;
+}
+
+.machineProgram {
+	border-collapse: collapse;
 }
