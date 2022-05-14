@@ -106,7 +106,7 @@ table td, th {
 
 .container__machine-strip {
 	width: 80%;
-	height: 130px;
+	height: 180px;
 	overflow-x: scroll;
 	overflow-y: hidden;
 }
