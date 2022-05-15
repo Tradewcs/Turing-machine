@@ -15,7 +15,6 @@ let nullSymbol = '0';
 let HeadCurrentPosition = 0;
 let statesCount = 2;
 let currentState = 1;
-let selectedValueIndex;
 
 
 // addStateButton.addEventListener('click', function() {
@@ -147,7 +146,7 @@ function BuildProgramTable() {
 	programTable.innerHTML = inner_str;
 }
 
-
+let selectedValueIndex;
 let id_previous_green_cell = '0c';
 machineStrip.onclick = (event) => {
 	symbolChangePanel.classList.remove('invisible');
@@ -168,10 +167,7 @@ machineStrip.onclick = (event) => {
 		};
 
 	} else {
-		if (selectedValueIndex >= Alpabeth.length) {
-			selectedValueIndex = 0;
-		}
-		currentCell.innerHTML = Alpabeth[selectedValueIndex++];
+		currentCell.innerHTML = Alpabeth[++selectedValueIndex % Alpabeth.length];
 
 	}
 

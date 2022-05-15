@@ -107,14 +107,13 @@
 									<td></td>
 								</tr>
 							</table>
-
-							<div class="title"> <h5>Порожній символ</h5> </div>
-							<div class="select_nullSumbol">
-								<select id="nullSymbolChoice">
+							<div class="n_title"> <h5>Порожній символ:</h5> </div>
+							
+								<select id="nullSymbolChoice" style="display: inline; margin: 10px;">
 									<option>0</option>
 									<option>1</option>
 								</select>
-							</div>
+							
 						</td>
 						
 						<td class="ExternalAlphabet">
@@ -156,11 +155,22 @@
 							<button class="inactive"> Імпорт </button>
 						</td>
 					</tr>
+
+					<tr>
+						<td colspan="3">
+							<span>Команда</span>
+							<span class="comandFrom"></span>
+							<select id="selectStateTo"></select>
+							<select id="selectSymbolTo"></select>
+							<select id="selectPositionTo"></select>
+							<button>Ввід</button>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
 
-
+		<div style="width: 10px; height: 300px;"></div>
 		
 		
 	<!-- <script id="LaTeXscript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>

@@ -18,8 +18,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
 body {
 	margin: 0;
 	font-family: 'Fira code';
-	font-size: 30px
-
+	font-size: 30px;
+	
 }
 
 
@@ -112,6 +112,7 @@ table td, th {
 	padding-left: 40px;
 	padding-right: 40px;
 	background-color: #00fffb;
+	border-radius: 5px;
 }
 
 
@@ -147,13 +148,13 @@ table td, th {
 }
 
 .control-panel {
+	margin-left: auto;
+	margin-right: auto;
 	border-collapse: collapse;
 }
 
 .control-panel td {
-	padding-top: 1px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding: 20px;
 }
 
 
@@ -171,6 +172,20 @@ table td, th {
 	padding: 10px;
 }
 
+.n_title {
+	display: inline;
+	padding: 0;
+	background-color: #00fffb;
+	width: auto;
+	border-radius: 5px;
+}
+
+.n_title h5 {
+	display: inline;
+	margin: 40px;
+	width: auto;
+}
+
 .control-panel td {
 	vertical-align: top;
 }
@@ -182,6 +197,9 @@ table td, th {
 
 .select_nullSumbol {
 	padding-left: 30px;
+	display: inline;
+	
+
 }
 
 .machineProgram {
