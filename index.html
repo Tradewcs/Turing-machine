@@ -8,6 +8,8 @@
 <body>
 	
 	<div class="wrapper">
+		<div class="statusBar"> <div class="title"><h5>Стрічка машини Тюрінга</h5></div> </div>
+
 		<div class="container__machine-strip">
 			<table class="table_machine-strip">
 				<tr class="machine-strip"></tr>
@@ -15,6 +17,21 @@
 				<tr class="machine-state"></tr>
 
 			</table>
+		</div>
+
+		<div class="symbolChangePanel invisible">
+			<span>Символ:</span>
+			<select id="stripSymbolSelect">
+				<option> 0 </option>
+				<option> 1 </option>
+			</select>
+
+			<span style="width: 50px;">&nbsp;</span>
+			<button id="exitChoiseButton"> Вихід </button>
+			<span style="width: 50px;">&nbsp;</span>
+			<button id="setHeadButton">Встановити голівку</button>
+			<span style="width: 50px;">&nbsp;</span>
+			<button id="cleanStripButton">Очистити стрічку</button>
 		</div>
 
 		<div class="container__control-panel">
@@ -36,7 +53,7 @@
 									<td><input type="checkbox" name = "u">u</td>
 								</tr>
 								<tr>
-									<td><input type="checkbox" name = "1">1</td>
+									<td><input checked type="checkbox" name = "1">1</td>
 									<td><input type="checkbox" name = "b">b</td>
 									<td><input type="checkbox" name = "l">l</td>
 									<td><input type="checkbox" name = "v">v</td>
@@ -91,10 +108,11 @@
 								</tr>
 							</table>
 
-							<h5>Порожній символ</h5>
+							<div class="title"> <h5>Порожній символ</h5> </div>
 							<div class="select_nullSumbol">
 								<select id="nullSymbolChoice">
 									<option>0</option>
+									<option>1</option>
 								</select>
 							</div>
 						</td>
@@ -109,8 +127,8 @@
 								<li>q1</li>
 							</ul>
 
-							<button class="addState">Додати стан</button>
-							<button class="deleteState"> Видалити стан </button>
+							<button class="addStateButton">Додати стан</button>
+							<button class="deleteStateButton"> Видалити стан </button>
 						</td>
 						
 						<td>
@@ -120,14 +138,17 @@
 								<tr>
 									<td></td>
 									<td>0</td>
+									<td>1</td>
 								</tr>
 								<tr>
 									<td>q0</td>
-									<td></td>
+									<td id="0-0"></td>
+									<td id="0-1"></td>
 								</tr>
 								<tr>
 									<td>q1</td>
-									<td></td>
+									<td id="1-0"></td>
+									<td id="1-1"></td>
 								</tr>
 							</table>
 

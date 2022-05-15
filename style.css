@@ -27,6 +27,9 @@ ul li {
 	text-align: left;
 }
 
+span {
+	color: red;
+}
 
 
 h5 {
@@ -40,9 +43,11 @@ input {
 }
 
 select {
-	width: 100px;
-	height: 50px;
+	width: 60px;
+	height: 30px;
 	font-size: 20px;
+	background-color: rgb(193, 212, 221);
+	border-radius: 5px;
 }
 
 button {
@@ -66,6 +71,10 @@ button:active {
 }
 
 
+.invisible {
+	display: none;
+}
+
 .inactive {
 	background-color: rgb(219, 219, 219);
 	color: rgb(202, 202, 202);
@@ -80,6 +89,14 @@ button:active {
 	background-color: rgb(219, 219, 219);
 }
 
+.yellow {
+	background-color: #ffff00;
+}
+
+.green {
+	background-color: #2fe32a;
+}
+
 table td, th {
 	border: 0.5px solid black;
 }
@@ -89,7 +106,7 @@ table td, th {
 }
 
 .title {
-	
+	text-align: center;
 	margin: 0px;
 	line-height: 40px;
 	padding-left: 40px;
@@ -105,7 +122,7 @@ table td, th {
 }
 
 .container__machine-strip {
-	width: 80%;
+	width: 100%;
 	height: 180px;
 	overflow-x: scroll;
 	overflow-y: hidden;
@@ -117,9 +134,7 @@ table td, th {
 	text-align: center;
 }
 
-.yellow {
-	background-color: #ffff00;
-}
+
 
 .table_machine-strip .td-invs {
 	border: 0.5px solid transparent;
@@ -171,4 +186,14 @@ table td, th {
 
 .machineProgram {
 	border-collapse: collapse;
+}
+
+.symbolChangePanel {
+	text-align: center;
+	margin: 50px;
+}
+
+.symbolChangePanel button {
+	display: inline;
+	width: auto;
 }
