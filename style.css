@@ -230,10 +230,10 @@ table td, th {
 
 .machineProgram td {
 	font-size: 25px;
+	padding: 30px;
 }
 
-#comandFrom {
+
+#commandFrom {
 	color: black;
-	font-weight: bold;
-	font-size: 25px;
 }

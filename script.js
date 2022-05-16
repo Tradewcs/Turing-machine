@@ -1,4 +1,4 @@
-let alphabeth_table = document.querySelector('.alphabet-symbols-choise');
+let alphabethTable = document.querySelector('.alphabet-symbols-choise');
 let machineStrip = document.querySelector('.machine-strip');
 let machineHead = document.querySelector('.machine-head');
 let machineState = document.querySelector('.machine-state');
@@ -52,20 +52,26 @@ function fillStrip(length) {
 }
 
 
-alphabeth_table.onclick = function reloadNullSymbolChoice(event) {
+alphabethTable.onclick = reloadNullSymbolChoice;
+
+function reloadNullSymbolChoice(event) {
 	let target = event.target;
 	
 	if (target.type == 'checkbox') {
 		if (target.checked) {
 			Alpabeth.push(target.name);
+
+			addSymbol(target.name);
 		} else {
 			Alpabeth = Alpabeth.filter(element => element != target.name);
+
+			deleteSymbol(target.name);
 		}
 
 		nullSymbol = nullSymbolChoice.value;
 		nullSymbolChoice_addOptions(Alpabeth);
 		stripSymbolSelect.innerHTML = nullSymbolChoice.innerHTML;
-		BuildProgramTable();
+
 	}
 }
 
@@ -83,6 +89,26 @@ nullSymbolChoice.onchange = function(event) {
 	setHead(HeadCurrentPosition);
 }
 
+function addSymbol(c) {
+	let th = document.createElement('th');
+	th.id = 'h-' + c;
+	th.innerHTML = c;
+	document.getElementById('hri').appendChild(th);
+
+	for (let i = 0; i < statesCount; i++) {
+		let td = document.createElement('td');
+		td.id = i + '-' + c;
+		document.getElementById(`${i}ri`).appendChild(td);
+	}
+}
+
+function deleteSymbol(c) {
+	document.getElementById(`h-${c}`).remove();
+
+	for (let i = 0; i < statesCount; i++) {
+		document.getElementById(`${i}-${c}`).remove();
+	}
+}
 
 
 function setHead(position) {
@@ -141,27 +167,6 @@ deleteStateButton.onclick = () => {
 	}
 }
 
-function BuildProgramTable() {
-	inner_str = '';
-	
-	Alpabeth.sort();
-	
-	inner_str += '<tr> <td></td> ';
-	for (let i = 0; i < Alpabeth.length; i++) {
-		inner_str += `<td> ${Alpabeth[i]} </td>`;
-	}
-	inner_str += '</tr>';
-	
-	for (let i = 0; i < statesCount; i++) {
-		inner_str += `<tr id="${i}ri"> <td> q${i} </td>`;
-		for (let j = 0; j < Alpabeth.length; j++) {
-			inner_str += `<td id="${i}-${Alpabeth[j]}"></td>`;
-		}
-		inner_str += '</tr>';
-	}
-	
-	programTable.innerHTML = inner_str;
-}
 
 let selectedValueIndex;
 let id_previous_green_cell = '0c';
@@ -215,7 +220,7 @@ machineProgram.onclick = reloadStateChoice;
 let prev_event;
 function reloadStateChoice(event) {
 	if (event.target.id) {
-		if (prev_event !== undefined) prev_event.target.classList.remove('yellow');
+		if (prev_event !== undefined) {prev_event.target.classList.remove('yellow');}
 
 		let commandCell = event.target;
 		commandCell.classList.add('yellow');
@@ -224,17 +229,21 @@ function reloadStateChoice(event) {
 
 		let commandFrom = document.getElementById('commandFrom');
 		let id = commandCell.id;
-		commandFrom.innerHTML = `${id.split('-')[0]}, ${id.split('-')[1]} -->`;
+		commandFrom.innerHTML = `q${id.split('-')[0]}, ${id.split('-')[1]} -->`;
 
+		let selectState = document.getElementById('selectState');
+		selectState.innerHTML = '';
+		for (let i = 0; i < statesCount; i++) {
+			selectState.innerHTML += `<option>${i}</option>`;
+		}
 
+		let selectSymbol = document.getElementById('selectSymbol');
+		selectSymbol.innerHTML = nullSymbolChoice.innerHTML;
+
+		document.getElementById('enterCommandButton').onclick = () => {
+			commandCell.innerHTML = `q${selectState.value}, ${selectSymbol.value}, ${document.getElementById('selectDirection').value}`;
+		}
 		
 		prev_event = event;
 	}
-
-	if (prev_event !== undefined) {
-		// console.log(prev_event);
-		console.log(prev_event.target);
-		console.log(event.target);
-	}
-
 }
