@@ -221,3 +221,19 @@ table td, th {
 	display: inline;
 	width: auto;
 }
+
+.machineProgram {
+	font-weight: bold;
+	padding: 20px;
+
+}
+
+.machineProgram td {
+	font-size: 25px;
+}
+
+#comandFrom {
+	color: black;
+	font-weight: bold;
+	font-size: 25px;
+}

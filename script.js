@@ -8,6 +8,8 @@ let deleteStateButton = document.querySelector('.deleteStateButton');
 let programTable = document.querySelector('.machineProgram');
 let symbolChangePanel = document.querySelector('.symbolChangePanel');
 let stripSymbolSelect = document.getElementById('stripSymbolSelect');
+let statesManager = document.querySelector('.statesManager');
+
 
 const cells_count = 10;
 let Alpabeth = ['0', '1'];
@@ -104,23 +106,38 @@ function setHead(position) {
 
 addStateButton.onclick = () => {
 	let statesList = document.querySelector('.statesList');
-	statesList.innerHTML += `<li>q${statesCount++}</li>`;
+	statesList.innerHTML += `<li>q${statesCount}</li>`;
+	
+	let tr = document.createElement('tr');
+	tr.id = statesCount + 'ri';
 
-	BuildProgramTable();
+	let th = document.createElement('th');
+	th.innerHTML = 'q' + statesCount;
+
+	tr.appendChild(th);
+	for (let i = 0; i < Alpabeth.length; i++) {
+		let td = document.createElement('td');
+		td.id = statesCount + '-' + i;
+
+		tr.appendChild(td);
+	}
+
+	programTable.appendChild(tr);
+	statesCount++;
 }
 
 deleteStateButton.onclick = () => {
 	if (statesCount > 2) {
 		let statesList = document.querySelector('.statesList');
 		statesList.innerHTML = '';
-
-		statesCount--;
-		for (let i = 0; i < statesCount; i++) {
+		
+		for (let i = 0; i < statesCount - 1; i++) {
 			statesList.innerHTML += `<li>q${i}</li>`
 		}
 
+		document.getElementById(`${--statesCount}ri`).remove();
 
-		BuildProgramTable();
+		// reloadStateChoice(prev_event);
 	}
 }
 
@@ -136,7 +153,7 @@ function BuildProgramTable() {
 	inner_str += '</tr>';
 	
 	for (let i = 0; i < statesCount; i++) {
-		inner_str += `<tr> <td> q${i} </td>`;
+		inner_str += `<tr id="${i}ri"> <td> q${i} </td>`;
 		for (let j = 0; j < Alpabeth.length; j++) {
 			inner_str += `<td id="${i}-${Alpabeth[j]}"></td>`;
 		}
@@ -192,22 +209,32 @@ machineStrip.onclick = (event) => {
 
 
 let machineProgram = document.querySelector('.machineProgram');
-machineProgram.onclick = (event) => {
-	let commandCell = event.target;
 
-	if (commandCell.id) {
-		let machineCommand = {
-			goTostate: 3,
-			writeSymbol: '0',
-			direction: 'R',
-		}
+machineProgram.onclick = reloadStateChoice;
 
-		commandCell.innerHTML = getCommandStr(machineCommand);
+let prev_event;
+function reloadStateChoice(event) {
+	if (event.target.id) {
+		if (prev_event !== undefined) prev_event.target.classList.remove('yellow');
 
-		console.log(typeof machineCommand);
+		let commandCell = event.target;
+		commandCell.classList.add('yellow');
+
+		statesManager.classList.remove('invisible');
+
+		let commandFrom = document.getElementById('commandFrom');
+		let id = commandCell.id;
+		commandFrom.innerHTML = `${id.split('-')[0]}, ${id.split('-')[1]} -->`;
+
+
+		
+		prev_event = event;
 	}
-}
 
-function getCommandStr(commandObj) {
-	return `q${commandObj.goTostate} ${commandObj.writeSymbol} ${commandObj.direction}`;
+	if (prev_event !== undefined) {
+		// console.log(prev_event);
+		console.log(prev_event.target);
+		console.log(event.target);
+	}
+
 }

@@ -133,41 +133,50 @@
 							<div class="title"> <h5>Програма</h5> </div>
 
 							<table class="machineProgram">
-								<tr>
-									<td></td>
-									<td>0</td>
-									<td>1</td>
-								</tr>
-								<tr>
-									<td>q0</td>
-									<td id="0-0"></td>
-									<td id="0-1"></td>
-								</tr>
-								<tr>
-									<td>q1</td>
-									<td id="1-0"></td>
-									<td id="1-1"></td>
-								</tr>
+								<tbody>
+									<tr>
+										<td></td>
+										<th>0</th>
+										<th>1</th>
+									</tr>
+									<tr>
+										<th>q0</th>
+										<td id="0-0"></td>
+										<td id="0-1"></td>
+									</tr>
+									<tr>
+										<th>q1</th>
+										<td id="1-0"></td>
+										<td id="1-1"></td>
+									</tr>
+								</tbody>
 							</table>
-
 							<button class="inactive"> Експорт </button>
 							<button class="inactive"> Імпорт </button>
+
 						</td>
 					</tr>
 
-					<tr class="statesManager">
+					<tr class="statesManager invisible">
 						<td colspan="3">
 							<span>Команда</span>
-							<span class="comandFrom"></span>
-							<select id="selectStateTo"></select>
-							<select id="selectSymbolTo"></select>
-							<select id="selectPositionTo"></select>
-							<button>Ввід</button>
+							<span id="commandFrom"></span>
+							<select id="selectState"></select>
+							<select id="selectSymbol"></select>
+							<select id="selectPosition">
+								<option>L</option>
+								<option>R</option>
+								<option>S</option>
+							</select>
+							<button id="enterCommandButton">Ввід</button>
+							<button id="cancelCommandButton">Відмна</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+
+
 
 		<div style="width: 10px; height: 300px;"></div>
 		
