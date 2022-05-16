@@ -138,7 +138,7 @@ function BuildProgramTable() {
 	for (let i = 0; i < statesCount; i++) {
 		inner_str += `<tr> <td> q${i} </td>`;
 		for (let j = 0; j < Alpabeth.length; j++) {
-			inner_str += `<td id="${i}-${j}"></td>`;
+			inner_str += `<td id="${i}-${Alpabeth[j]}"></td>`;
 		}
 		inner_str += '</tr>';
 	}
@@ -188,4 +188,26 @@ machineStrip.onclick = (event) => {
 	cleanStripButton.onclick = () => {
 		fillStrip(cells_count);
 	}
+}
+
+
+let machineProgram = document.querySelector('.machineProgram');
+machineProgram.onclick = (event) => {
+	let commandCell = event.target;
+
+	if (commandCell.id) {
+		let machineCommand = {
+			goTostate: 3,
+			writeSymbol: '0',
+			direction: 'R',
+		}
+
+		commandCell.innerHTML = getCommandStr(machineCommand);
+
+		console.log(typeof machineCommand);
+	}
+}
+
+function getCommandStr(commandObj) {
+	return `q${commandObj.goTostate} ${commandObj.writeSymbol} ${commandObj.direction}`;
 }
