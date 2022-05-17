@@ -237,3 +237,12 @@ table td, th {
 #commandFrom {
 	color: black;
 }
+
+.machineRunPanel {
+	text-align: center;
+}
+
+.machineRunPanel button {
+	display: inline;
+	width: auto;
+}

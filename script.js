@@ -9,6 +9,8 @@ let programTable = document.querySelector('.machineProgram');
 let symbolChangePanel = document.querySelector('.symbolChangePanel');
 let stripSymbolSelect = document.getElementById('stripSymbolSelect');
 let statesManager = document.querySelector('.statesManager');
+let doCommand = document.getElementById('doCommand');
+
 
 
 const cells_count = 10;
@@ -118,6 +120,7 @@ function setHead(position) {
 	cell.classList.remove('yellow');
 	cellHead.innerHTML = '';
 	cellState.innerHTML = '';
+
 	
 	HeadCurrentPosition = position;
 
@@ -226,6 +229,8 @@ function reloadStateChoice(event) {
 		commandCell.classList.add('yellow');
 
 		statesManager.classList.remove('invisible');
+		let machineRunPanel = document.querySelector('.machineRunPanel');
+		machineRunPanel.classList.remove('invisible');
 
 		let commandFrom = document.getElementById('commandFrom');
 		let id = commandCell.id;
@@ -243,7 +248,44 @@ function reloadStateChoice(event) {
 		document.getElementById('enterCommandButton').onclick = () => {
 			commandCell.innerHTML = `q${selectState.value}, ${selectSymbol.value}, ${document.getElementById('selectDirection').value}`;
 		}
+
+		let cancelCommandButton = document.getElementById('cancelCommandButton');
+		cancelCommandButton.onclick = () => {
+			statesManager.classList.add('invisible');
+			machineRunPanel.classList.add('invisible');
+			commandCell.classList.remove('yellow');
+		}
+
+		doCommand.onclick = () => {
+			commandCell.classList.remove('yellow')
+			doOneCommand();
+
+		}
 		
 		prev_event = event;
 	}
 }
+
+function doOneCommand() {
+	let currentCell = document.getElementById(`${HeadCurrentPosition}c`);
+	let command = document.getElementById(`${currentState}-${currentCell.innerHTML}`).innerHTML.split(', ');
+	
+	if (command[2]) {
+		command[0] = command[0][1];
+		console.log(command);
+
+		currentState = command[0];
+		currentCell.innerHTML = command[1];
+
+		if (command[2] == 'R') {
+			setHead(HeadCurrentPosition + 1)
+		}
+
+		if (command[2] == 'L') {
+			setHead(HeadCurrentPosition - 1);
+		}
+	}
+
+	return command[2];
+}
+
