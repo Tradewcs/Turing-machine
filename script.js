@@ -152,7 +152,22 @@ addStateButton.onclick = () => {
 		tr.appendChild(td);
 	}
 
+	document.getElementById('0ri').remove();
+	
 	programTable.appendChild(tr);
+
+	tr = document.createElement('tr');
+	tr.id = '0ri';
+	tr.innerHTML = '<td>q0</td>';
+	for (let i = 0; i < Alpabeth.length; i++) {
+		let td = document.createElement('td');
+		td.id = `0-${i}`;
+
+		tr.appendChild(td);
+	}
+
+	programTable.appendChild(tr);
+
 	statesCount++;
 }
 
