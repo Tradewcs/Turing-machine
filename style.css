@@ -228,10 +228,11 @@ table td, th {
 
 }
 
-.machineProgram td {
-	font-size: 25px;
-	padding: 30px;
+.machineProgram td, th {
+	font-size: 20px;
+	padding: 17px;
 }
+
 
 
 #commandFrom {

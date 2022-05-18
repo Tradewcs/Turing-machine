@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\CHNU\\projects\\projects1"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Turing-machine"
+	}
+}

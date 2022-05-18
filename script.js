@@ -13,7 +13,7 @@ let doCommand = document.getElementById('doCommand');
 
 
 
-const cells_count = 10;
+const cells_count = 57;
 let Alpabeth = ['0', '1'];
 let nullSymbol = '0';
 let HeadCurrentPosition = 0;
@@ -114,23 +114,24 @@ function deleteSymbol(c) {
 
 
 function setHead(position) {
-	let cell      = document.getElementById(`${HeadCurrentPosition}c`);
-	let cellHead  = document.getElementById(`${HeadCurrentPosition}h`);
-	let cellState = document.getElementById(`${HeadCurrentPosition}s`);
-	cell.classList.remove('yellow');
-	cellHead.innerHTML = '';
-	cellState.innerHTML = '';
+		let cell      = document.getElementById(`${HeadCurrentPosition}c`);
+		let cellHead  = document.getElementById(`${HeadCurrentPosition}h`);
+		let cellState = document.getElementById(`${HeadCurrentPosition}s`);
+		cell.classList.remove('yellow');
+		cellHead.innerHTML = '';
+		cellState.innerHTML = '';
 
-	
-	HeadCurrentPosition = position;
+		
+		HeadCurrentPosition = position < cells_count ? position : cells_count - 1;
 
-	cell      = document.getElementById(`${HeadCurrentPosition}c`);
-	cellHead  = document.getElementById(`${HeadCurrentPosition}h`);
-	cellState = document.getElementById(`${HeadCurrentPosition}s`);
+		cell      = document.getElementById(`${HeadCurrentPosition}c`);
+		cellHead  = document.getElementById(`${HeadCurrentPosition}h`);
+		cellState = document.getElementById(`${HeadCurrentPosition}s`);
 
-	cell.classList.add('yellow');
-	cellHead.innerHTML = '↑';
-	cellState.innerHTML = `q${currentState}`;
+		cell.classList.add('yellow');
+		cellHead.innerHTML = '↑';
+		cellState.innerHTML = `q${currentState}`;
+
 }
 
 addStateButton.onclick = () => {
@@ -259,7 +260,19 @@ function reloadStateChoice(event) {
 		doCommand.onclick = () => {
 			commandCell.classList.remove('yellow')
 			doOneCommand();
+		}
 
+		let doAll = document.getElementById('doAll');
+		doAll.onclick = () => {
+			commandCell.classList.remove('yellow')
+
+			while (true) {
+				
+				await (async () => {setTimeout(()=>1, Number(document.getElementById('selectSpeed').value) * 1000);})
+				doOneCommand()
+
+				// if ()
+			}
 		}
 		
 		prev_event = event;
@@ -285,7 +298,16 @@ function doOneCommand() {
 			setHead(HeadCurrentPosition - 1);
 		}
 	}
+	if (document.getElementById(`${currentState}-${currentCell.innerHTML}`).innerHTML) {
+		console.log(123);
+	} else {console.log('no');}
+	console.log(document.getElementById(`${currentState}-${currentCell.innerHTML}`).innerHTML.split(', '));
+	
 
 	return command[2];
+}
+
+function is_machineWork() {
+	
 }
 
